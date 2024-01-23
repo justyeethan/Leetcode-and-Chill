@@ -7,6 +7,7 @@ from arrays.searchRotatedArray import searchRotatedArray
 from arrays.mergeSortedArray import mergeSortedArray
 from arrays.threeSum import threeSum
 from arrays.assignCookies import findContentChildren
+from arrays.uniqueNumberOfOccurrences import uniqueOccurrences
 
 
 import unittest
@@ -85,6 +86,20 @@ class ArrayUnitTests(unittest.TestCase):
             self.assertEqual(res.val, ans[i], "Incorrect output.")
             i += 1
             res = res.next
+
+    def test_uniqueOccurrences(self):
+        tests = [
+            [1, 2, 2, 1, 1, 3],
+            [1, 2],
+            [-3, 0, 1, -3, 1, 1, 1, -3, 10, 0]
+        ]
+        ans = [True, False, True]
+        for i in range(len(tests)):
+            self.assertEqual(
+                uniqueOccurrences(tests[i]),
+                ans[i],
+                'Incorrect output.'
+            )
 
 
 if __name__ == '__main__':
